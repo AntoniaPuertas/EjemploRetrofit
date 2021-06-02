@@ -5,18 +5,28 @@ import com.toni.ejemploretrofit.io.model.Villano;
 import java.util.ArrayList;
 
 public class RespuestaServidor {
-    private ArrayList<Villano> listaVillanos;
+    private ArrayList<Villano> mensaje;
+    private int estado;
 
-    public RespuestaServidor(ArrayList<Villano> listaVillanos){
-        this.listaVillanos = listaVillanos;
+    public RespuestaServidor(ArrayList<Villano> listaVillanos, int estado){
+        this.mensaje = listaVillanos;
+        this.estado = estado;
     }
 
 
     public ArrayList<Villano> getListaVillanos() {
-        return listaVillanos;
+        return mensaje;
     }
 
     public void setListaVillanos(ArrayList<Villano> listaVillanos) {
-        this.listaVillanos = listaVillanos;
+        this.mensaje = listaVillanos;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
 }

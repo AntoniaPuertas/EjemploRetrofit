@@ -38,7 +38,7 @@ public class VillanosAdapter extends RecyclerView.Adapter<VillanosAdapter.Villan
         Villano villano = listaVillanos.get(position);
         holder.txtNombreVillano.setText(villano.getNombre());
         String imagenUrl = "https://apcpruebas.es/imagenes/" + villano.getImagen();
-        Glide.with(context).load(imagenUrl).into(holder.imgVillano);
+        Glide.with(context).load(imagenUrl).placeholder(R.drawable.villano).into(holder.imgVillano);
     }
 
     @Override

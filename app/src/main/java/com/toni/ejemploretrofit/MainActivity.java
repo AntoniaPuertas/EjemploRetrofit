@@ -13,6 +13,8 @@ import com.toni.ejemploretrofit.io.response.ApiAdapter;
 import com.toni.ejemploretrofit.io.response.ApiService;
 import com.toni.ejemploretrofit.io.response.RespuestaServidor;
 
+import java.util.Calendar;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -44,10 +46,12 @@ public class MainActivity extends AppCompatActivity {
                 if(response.body() == null){
                     //el servidor no responde
                 }else{
-
+                    if(response.body().getEstado() == 1){
                         Datos.setListaVillanos(response.body().getListaVillanos());
                         mostrarRecycler(context);
-
+                    }else{
+                        Toast.makeText(MainActivity.this, "Fallo en el servidor", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
 
